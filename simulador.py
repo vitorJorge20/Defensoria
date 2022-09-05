@@ -31,7 +31,7 @@ while True:
     
     for event in pygame.event.get():
         
-        tela.fill((250,250,250))
+        tela.fill((250,250,240))
         if event.type == QUIT:
             pygame.quit()
             
