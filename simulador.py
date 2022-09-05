@@ -36,18 +36,23 @@ while True:
             pygame.quit()
             
         if event.type == pygame.KEYDOWN:
+            
             if event.key == pygame.K_a:
+                char = pygame.image.load('avatar3.png')
                 avatar_x -= 10
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_d:
+                char = pygame.image.load('avatar2.png')
                 avatar_x += 10
         
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_w:
+                char = pygame.image.load('avatar4.png')
                 avatar_y -= 10
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_s:
+                char = pygame.image.load('avatar.png')
                 avatar_y += 10
             
-    clock.tick(33)
+    clock.tick(20)
     pygame.display.update()
