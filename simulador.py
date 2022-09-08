@@ -23,6 +23,9 @@ avatar_x = 600
 avatar_y = 200
 char = pygame.image.load('avatar2.png')
 instruc = pygame.font.Font('freesansbold.ttf',32)
+
+
+jardim = pygame.Rect(670,175,150,100)
     
     
 while True:
@@ -30,10 +33,12 @@ while True:
     tela.fill((0,0,0,))
     tela.blit(mapa,(mapa_x,0))
     tela.blit(char,(avatar_x,avatar_y))
+    #pygame.draw.rect(tela,(250,250,250),jardim)
     
     
     for event in pygame.event.get():
         
+        char_c = char.get_rect()
         
         if event.type == QUIT:
             pygame.quit()
@@ -73,15 +78,28 @@ while True:
         if avatar_y >= 200 and avatar_x <= 600:
             avatar_y = 200
         
-        if avatar_x >= 620 and avatar_x <=645 and avatar_y >= 150:
+        
+        if avatar_x >= 620 and avatar_x <=645 and avatar_y < 200 and avatar_y > 140:
             avatar_x = 620
         
-        if avatar_y >= 140 and avatar_y <= 180 and avatar_x <=645:
+        if avatar_y <= 140 and avatar_x >=645 and avatar_x <=820:
             avatar_y = 140
+        
+        if avatar_y <= 170 and avatar_x <=820:
+            avatar_y = 140
+        
+        #if avatar_y >= 200 and avatar_x >=645 and avatar_x <=820 and avatar_y <= 250:
+            #avatar_x = 620
+        
+        #if avatar_y <= 170 and avatar_x <=820:
+            #avatar_y = 140
+        
         
         
         #if avatar_x >= 500:
            #instrucim = instruc.render("piso defensoria",True,(255,255,255,))
-            #tela.blit(instrucim, (20, 550))
+           # tela.blit(instrucim, (20, 550))
+        
+
     clock.tick(33)
     pygame.display.update()
